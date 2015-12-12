@@ -1,4 +1,3 @@
-local self = sjFont
 local ADDON_PATH = "Interface\\AddOns\\sjFont\\"
 local SYSTEM_FONTS = {
     -- Font, Default size
@@ -49,7 +48,7 @@ local SYSTEM_FONTS = {
     { ZoneTextFont, 102 },
     { SubZoneTextFont, 26 },
     { ErrorFont, 16 },
-    { TextStatusBarText, 14 }, 
+    { TextStatusBarText, 14 },
     { TextStatusBarTextSmall, 12 },
     { CombatLogFont, 12 },
     { GameTooltipText, 12 },
@@ -61,24 +60,40 @@ local SYSTEM_FONTS = {
     { InvoiceTextFontNormal, 12 },
     { InvoiceTextFontSmall, 10 }
 }
+local fmt = "|cff22ff55sjFont:|r %s"
 
 function P(msg, ...)
     DEFAULT_CHAT_FRAME:AddMessage(format(msg, unpack(arg)))
 end
 
-function sjFont.OnLoad()
-    P("sjFont.OnLoad")
-    self.font = ADDON_PATH.."media\\fonts\\MyriadCondensed.ttf"
+function sjFont_OnLoad()
+    P(fmt,"sjFont_OnLoad")
+    SlashCmdList["SJFONT"] = sjFont_ChatHandler
+    SLASH_SJFONT1 = "/sjfont"
+    SLASH_SJFONT2 = "/sjf"
+
+    sjFont.font = ADDON_PATH.."media\\fonts\\MyriadCondensed.ttf"
+    sjFont.font_scale = 0.5
 end
 
-function sjFont.OnEvent()
-    P("sjFont.OnEvent")
+function sjFont_OnEvent()
+    P("sjFont_OnEvent")
 end
 
-function sjFont.OnUpdate()
-    P("sjFont.OnUpdate")
+function sjFont_OnUpdate()
+    P("sjFont_OnUpdate")
 end
 
-function sjFont.UpdateSystemFonts()
-    P("sjFont.UdateSystamFonts")
+function sjFont_UpdateSystemFonts()
+    P("sjFont_UpdateSystemFonts")
+    for i,v in SYSTEM_FONTS do
+        local font = v[1]:GetFont()
+        P(fmt,format("%s, %s",font, v[2]*sjFont.font_scale))
+        v[1]:SetFont(font, v[2] * sjFont.font_scale)
+    end
+end
+
+function sjFont_ChatHandler(msg)
+    P(fmt,"sjFont_ChatHandler")
+    sjFont_UpdateSystemFonts()
 end
