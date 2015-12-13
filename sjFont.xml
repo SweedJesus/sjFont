@@ -1,15 +1,7 @@
 <Ui xmlns="http://www.blizzard.com/wow/ui/"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.blizzard.com/wow/ui/"> 
-    <Script file="sjFont.lua"/>
-    <Frame name="sjFont" parent="UIParent">
-        <Scripts>
-            <OnLoad>
-                sjFont_OnLoad()
-            </OnLoad>
-            <OnEvent>
-                sjFont_OnEvent()
-            </OnEvent>
-        </Scripts>
+
+    <Frame name="sjFont_Preview" parent="UIParent">
     </Frame>
 </Ui>

@@ -1,6 +1,15 @@
 ## Interface: 11200
-## Title: sjFont
+## Title: |cffffff00s|r|cff007fffj|rFont |cff7fff7f-Ace2-|r |cffff00001.12|r
 ## Author: SweedJesus (Miraculin on Nostalrius)
 ## DefaultState: Enabled
+## SavedVariables: sjFont_DB
 
-sjFont.xml
+libs\AceLibrary\AceLibrary.lua
+libs\AceOO-2.0\AceOO-2.0.lua
+libs\AceEvent-2.0\AceEvent-2.0.lua
+libs\AceConsole-2.0\AceConsole-2.0.lua
+libs\AceDB-2.0\AceDB-2.0.lua
+libs\AceAddon-2.0\AceAddon-2.0.lua
+libs\AceDebug-2.0\AceDebug-2.0.lua
+
+sjFont.lua
