@@ -16,6 +16,7 @@ local FONTS = {
     "LiberationSans",
     "MetalLord",
     "MyriadCondensed",
+    "pixelmix",
     "VeraSerif"
 }
 local FONT_USAGE = "{ [1]:Default"
