@@ -1,6 +1,7 @@
 ## Interface: 11200
 ## Title: |cffffff00s|r|cff007fffj|rFont |cff7fff7f-Ace2-|r |cffff00001.12|r
-## Author: SweedJesus (Miraculin on Nostalrius)
+## Author: SweedJesus (Miraculin @ Nostalrius)
+## X-Website: https://sweedjesus.github.io/my-addons
 ## DefaultState: Enabled
 ## SavedVariables: sjFont_DB
 
